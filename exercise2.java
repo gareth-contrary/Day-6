@@ -29,7 +29,11 @@ public class exercise2 {
 			count++;
 		}
 		
-
+		ArrayCopier myArrayCopier = new ArrayCopier(src, dst);
+		myArrayCopier.copy(src, dst);
+		for(count = 0; count < dst.length; count++) { 
+			System.out.print(dst[count] + ", ");
+		}
 		
 	}
 }
