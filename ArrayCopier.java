@@ -9,16 +9,14 @@ public class ArrayCopier {
 	}
 
 	public void copy(int[] src, int[] dst) {
-		int srcLength = src.length;
-		int dstLength = dst.length;
 		int count = 0;
-		if (src.length <= dst.length) {
+		if (src.length == dst.length) {
 			for(count = 0; count < src.length; count++) {
 				dst[count] = src[count];
 			}
 		} else {
 			for(count = 0; count < dst.length; count++) {
-				if (count > src[count]) { dst[count] = 0; }
+				if (count >= src.length) { dst[count] = 0; }
 				else { dst[count] = src[count]; }
 			}
 		}
