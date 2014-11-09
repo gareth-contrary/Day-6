@@ -56,5 +56,41 @@ public class Matrix {
 				}
 			}
 		}
-	}		
+	}	
+
+	public String parseToString() {
+		int xLength = matrix.length;
+		int yLength = matrix[0].length;
+		String result = null;
+		for (int xCount = 0; xCount < xLength; xCount++) {
+			result = "[";
+			for(int yCount = 0; yCount <yLength; yCount++) {
+				result = result + matrix[xCount][yCount];
+				if (yCount != (yLength - 1)) {
+					result= result + ", ";
+				} 
+			}
+			if (xCount != (yLength - 1)) {
+				result = result + "], ";
+			} else { 
+				result = result + "]";
+			}
+		}
+		return result;
+	}
+
+	public void prettyPrint() {
+		int xLength = matrix.length;
+		int yLength = matrix[0].length;
+		for (int xCount = 0; xCount < xLength; xCount++) {
+			for(int yCount = 0; yCount <yLength; yCount++) {
+				System.out.print(matrix[xCount][yCount]);
+				if (yCount == (yLength - 1)) {
+					System.out.print("\n");
+				} else {
+					System.out.print("\t");
+				}
+			}
+		}
+	}				
 }
