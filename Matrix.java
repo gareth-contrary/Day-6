@@ -40,5 +40,21 @@ public class Matrix {
 			}
 		}
 	}
-		
+
+	public void setColumn(int y, Scanner sc) {
+		int yLength = matrix[0].length;
+		if (y >= yLength) {
+			System.out.println("Array is too small!");
+		} else {
+			int xLength = matrix.length;
+			for (int count = 0; sc.hasNextInt(); count++)
+			if (count > yLength) {
+				System.out.println("Array is too small!");
+			} else {
+				for(count = 0; count < xLength; count++) {
+					matrix[count][y] = sc.nextInt();
+				}
+			}
+		}
+	}		
 }
