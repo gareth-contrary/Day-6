@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Matrix {
 
 	private int[][] matrix;
@@ -21,5 +23,22 @@ public class Matrix {
 			this.matrix[x][y] = value;
 		}
 	}
-			
+
+	public void setRow(int x, Scanner sc) {
+		int xLength = matrix.length;
+		if (x >= xLength) {
+			System.out.println("Array is too small!");
+		} else {
+			int yLength = matrix[x].length;
+			for (int count = 0; sc.hasNextInt(); count++)
+			if (count > yLength) {
+				System.out.println("Array is too small!");
+			} else {
+				for(count = 0; count < yLength; count++) {
+					matrix[x][count] = sc.nextInt();
+				}
+			}
+		}
+	}
+		
 }
