@@ -1,15 +1,16 @@
 import java.util.Scanner;
 
 public class Matrix {
-
-	private int[][] matrix;
+	
+	public int[][] matrix;
 
 	public Matrix(int x, int y) {
+		this.matrix = new int[x][y];
 		int xCount = 0;
 		for (xCount = 0; xCount < x; xCount++){
 			int yCount = 0;
 			for (yCount = 0; yCount < y; yCount++) {
-					this.matrix[x][y] = 1;
+					this.matrix[xCount][yCount] = 1;
 			}	
 		}
 	}
@@ -30,14 +31,19 @@ public class Matrix {
 			System.out.println("Array is too small!");
 		} else {
 			int yLength = matrix[x].length;
-			for (int count = 0; sc.hasNextInt(); count++)
-			if (count > yLength) {
+			int numCount = 0;
+			while (sc.hasNextInt()) {
+				int temp = sc.nextInt();
+				numCount++;
+			}
+			if (numCount > yLength) {
 				System.out.println("Array is too small!");
 			} else {
-				for(count = 0; count < yLength; count++) {
-					matrix[x][count] = sc.nextInt();
+				for(int yCount = 0; yCount < yLength; yCount++) {
+					matrix[x][yCount] = sc.nextInt();
 				}
 			}
+			
 		}
 	}
 
@@ -47,12 +53,16 @@ public class Matrix {
 			System.out.println("Array is too small!");
 		} else {
 			int xLength = matrix.length;
-			for (int count = 0; sc.hasNextInt(); count++)
-			if (count > yLength) {
+			int numCount = 0;
+			while (sc.hasNextInt()) {
+				int temp = sc.nextInt();
+				numCount++;
+			}
+			if (numCount > yLength) {
 				System.out.println("Array is too small!");
 			} else {
-				for(count = 0; count < xLength; count++) {
-					matrix[count][y] = sc.nextInt();
+				for(int xCount = 0; xCount < xLength; xCount++) {
+					matrix[xCount][y] = sc.nextInt();
 				}
 			}
 		}
